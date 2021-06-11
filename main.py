@@ -47,7 +47,7 @@ class LinkPost(Post):
 
 
 ross = User(email="ross@example.com", first_name="Ross", last_name="A").save()
-john = User(email="john@example.com", first_name="Roe", last_name="Kail").save()
+john = User(email="john@example.com", first_name="Roe", last_name="Kail", hello="===WORLD==="*2).save()
 
 print("=== USER ===")
 for user in User.objects():
@@ -59,6 +59,7 @@ msg2 = Comment(name="howard", content="What are you doing?")
 post1 = TextPost(title="Fun with MongoEngine", author="john", comments=[msg1, msg2])
 post1.content = "Took a look at MongoEngine today, looks pretty cool."
 post1.tags = ["mongodb", "mongoengine"]
+post1.test = "cool============================================================================"
 post1.save()
 
 post2 = LinkPost(title="MongoEngine Documentation", author=ross)
